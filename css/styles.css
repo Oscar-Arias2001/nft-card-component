@@ -1,0 +1,233 @@
+/** Custom Properties Starts **/
+:root {
+	/** Website General Colors **/
+	--white: #fff;
+	--black: #000;
+
+	/** Website Primary Colors **/
+	--blue-500: hsl(215, 51%, 70%);
+	--cyan-400: hsl(178, 100%, 50%);
+	--aquamarine: #80ffdb;
+	--light-green: #7ae582;
+
+	/** Website Neutral Colors **/
+	--primary: hsl(217, 54%, 11%);
+	--secondary: hsl(216, 50%, 16%);
+	--tertiary: hsl(215, 32%, 27%);
+
+	/** Website Fonts **/
+	--main-font: "Outfit", sans-serif;
+
+	/** Website Sizes **/
+	--full: 100%;
+}
+
+@property --rotate {
+	syntax: "<angle>";
+	initial-value: 45deg;
+	inherits: false;
+}
+/** Custom Properties Ends **/
+
+/** Global CSS Styles **/
+body {
+	font-family: var(--main-font);
+	font-size: 1.6rem;
+	font-optical-sizing: auto;
+	font-style: normal;
+	line-height: 1.5;
+	color: var(--white);
+	background: var(--primary) url(../images/dominium-bg.png) no-repeat center
+		2.5rem / contain;
+}
+
+/** WebSite Animations **/
+@keyframes spin {
+	from {
+		--rotate: 0deg;
+	}
+
+	to {
+		--rotate: 360deg;
+	}
+}
+
+/** WebSite General Styles **/
+.container,
+[class$="__container"] {
+	width: min(90%, 120rem);
+	margin-inline: auto;
+}
+
+/** Utility First **/
+.d-flex {
+	display: flex;
+}
+
+.hidden {
+	overflow: hidden;
+}
+
+.fw-300 {
+	font-weight: 300;
+}
+
+.fw-600 {
+	font-weight: 600;
+}
+
+.text-center {
+	text-align: center;
+}
+
+/** Main Section **/
+.main {
+	min-height: 100dvh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/** Card Section **/
+.card {
+	position: relative;
+	width: min(95%, 30rem);
+	padding: 2rem;
+	border-radius: 0.7rem;
+	background-color: var(--secondary);
+	animation: spin 3s linear infinite;
+}
+
+.card::before,
+.card::after {
+	position: absolute;
+	content: "";
+	inset: -0.1rem;
+	border-radius: calc(0.7rem + 0.1rem);
+	background-image: linear-gradient(
+		var(--rotate),
+		var(--cyan-400),
+		var(--aquamarine),
+		var(--light-green)
+	);
+	z-index: -1;
+	animation: spin 3s linear infinite;
+}
+
+.card::before {
+	filter: blur(0.65rem);
+	opacity: 0.5;
+}
+
+.card__picture {
+	position: relative;
+	border-radius: 0.5rem;
+}
+
+.card__overlay,
+.card__ethereum,
+.card__time {
+	justify-content: center;
+}
+
+.card__overlay,
+.card__ethereum,
+.card__time,
+.card__author {
+	align-items: center;
+}
+
+.card__overlay {
+	position: absolute;
+	content: "";
+	inset: 0;
+	background-color: hsla(178, 100%, 50%, 0.5);
+	opacity: 0;
+	z-index: 1;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.card__image {
+	transform: scale(1.25);
+	transition: 0.5s ease-in-out transform;
+}
+
+.card__information {
+	margin-block-start: 2rem;
+}
+
+:is(.card__title, .card__span) {
+	transition: color 0.3s ease-in-out;
+}
+
+.card__title {
+	font-size: 1.8rem;
+}
+
+.card__description,
+.card__days {
+	color: var(--blue-500);
+}
+
+.card__description {
+	margin-block-start: 1rem;
+}
+
+.card__details,
+.card__author {
+	margin-block-start: 1.5rem;
+}
+
+.card__details {
+	font-size: 1.5rem;
+	justify-content: space-between;
+}
+
+.card__ethereum,
+.card__time {
+	column-gap: 0.5rem;
+}
+
+.card__score {
+	color: var(--cyan-400);
+}
+
+.card__author {
+	justify-content: flex-start;
+	column-gap: 1rem;
+	border-block-start: 0.1rem solid var(--tertiary);
+	padding-block-start: 1rem;
+	color: var(--blue-500);
+}
+
+.card__avatar {
+	width: 3.5rem;
+	border: 0.15rem solid var(--white);
+	border-radius: 50%;
+}
+
+.card__span {
+	color: var(--white);
+	font-weight: 400;
+}
+
+/** Footer Section **/
+.footer {
+	margin-block: 1.5rem;
+	color: var(--blue-500);
+}
+
+@media (hover: hover) {
+	/** Card Section **/
+	.card:hover .card__image {
+		transform: rotate(50deg) scale(1.45);
+	}
+
+	.card__picture:hover .card__overlay {
+		opacity: 1;
+	}
+
+	:is(.card__title, .card__span):hover {
+		color: var(--cyan-400);
+	}
+}
