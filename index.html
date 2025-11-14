@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow" />
+		<meta
+			name="description"
+			content="This is a frontend mentor challenge about create a NFT card component. Feel free to use it in your projects. Thanks in advance to this platform for these learning exercises."
+		/>
+		<meta
+			name="keywords"
+			content="ethereum, nft, dominium, eth, nft collection"
+		/>
+		<meta name="author" content="Oscar Arias" />
+		<title>NFT Dominium Card</title>
+
+		<link
+			rel="icon"
+			type="image/png"
+			href="./images/favicon-96x96.png"
+			sizes="96x96"
+		/>
+		<link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+		<link rel="shortcut icon" href="./images/favicon.ico" />
+
+		<!-- Normalize CSS Reset -->
+		<link rel="preload" href="./css/normalize.css" as="style" />
+		<link rel="stylesheet" href="./css/normalize.css" />
+
+		<!-- Google Website Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- CSS Styles -->
+		<link rel="preload" href="./css/styles.css" as="style" />
+		<link rel="stylesheet" href="./css/styles.css" />
+	</head>
+	<body>
+		<!-- Main Section Starts -->
+		<main class="main container">
+			<!-- Card Component Starts -->
+			<div class="card">
+				<!-- Card Picture Starts -->
+				<div class="card__picture hidden">
+					<div class="card__overlay d-flex">
+						<img
+							src="./images/icon-view.svg"
+							alt="View icon"
+							width="48"
+							height="48"
+						/>
+					</div>
+
+					<img
+						class="card__image"
+						src="./images/dominium.jpg"
+						alt="Dominium NFT image"
+						loading="lazy"
+						decoding="async"
+					/>
+				</div>
+				<!-- Card Picture Ends -->
+
+				<!-- Card Information Starts -->
+				<div class="card__information">
+					<h1 class="card__title fw-600">Dominium #3456</h1>
+
+					<p class="card__description fw-300">
+						Our dominium collection promotes balance and calm.
+					</p>
+
+					<!-- Card Details Section Starts -->
+					<div class="card__details d-flex">
+						<div class="card__ethereum d-flex">
+							<div class="card__icon">
+								<img
+									src="./images/icon-ethereum.svg"
+									alt="Ethereum icon"
+									width="11"
+									height="18"
+									loading="lazy"
+									decoding="async"
+								/>
+							</div>
+
+							<p class="card__score fw-600">0.041 ETH</p>
+						</div>
+
+						<div class="card__time d-flex">
+							<div class="card__icon">
+								<img
+									src="./images/icon-clock.svg"
+									alt="Clock icon"
+									width="17"
+									height="17"
+									loading="lazy"
+									decoding="async"
+								/>
+							</div>
+
+							<p class="card__days fw-300">3 days left</p>
+						</div>
+					</div>
+					<!-- Card Details Section Ends -->
+
+					<!-- Card Author Section Starts -->
+					<div class="card__author d-flex fw-300">
+						<div class="card__avatar hidden">
+							<img
+								src="./images/image-avatar.png"
+								alt="Profile Image"
+								loading="lazy"
+								decoding="async"
+							/>
+						</div>
+
+						<p class="card__creator">
+							Creation of <span class="card__span">Daniel Smith</span>
+						</p>
+					</div>
+					<!-- Card Author Section Ends -->
+				</div>
+				<!-- Card Information Ends -->
+			</div>
+			<!-- Card Component Ends -->
+		</main>
+		<!-- Main Section Ends -->
+
+		<!-- Footer Section Starts -->
+		<footer class="footer fw-600">
+			<!-- Footer Container Starts -->
+			<div class="footer__container">
+				<!-- Footer Paragraph Starts -->
+				<p class="footer__paragraph text-center">
+					Copyright &copy; Crafted by
+					<a
+						class="footer__link"
+						href="https://wa.me/+50576824820?text=Cont%C3%A1ctame%20para%20m%C3%A1s%20informaci%C3%B3n"
+						target="_blank"
+						rel="noopener noreferrer"
+						>Oscar Arias</a
+					>. All Rights Reserved 2025.
+				</p>
+				<!-- Footer Paragraph Ends -->
+			</div>
+			<!-- Footer Container Ends -->
+		</footer>
+		<!-- Footer Section Ends -->
+	</body>
+</html>
